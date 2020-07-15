@@ -19,7 +19,7 @@ export default {
     },
     plugins: [
         scss({
-            output:  'src/style/css/style.css',
+            output:  'dist/style.css',
             watch: 'src/style/scss'
         }),
         resolve(), // tells Rollup how to find date-fns in node_modules

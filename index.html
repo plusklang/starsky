@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="src/style/css/style.css">
+    <link rel="stylesheet" href="dist/style.css">
+    <script src="https://unpkg.com/basicscroll@3.0.0/dist/basicScroll.min.js"></script>
 </head>
 <body>
-    <h1>Hello Starsky</h1>
-<script src="src/js/main.js"></script>
+    <svg id="svgCanvas" viewbox="0 0 2000 1000" preserveaspectratio="xMinYMin slice" width="100%"  >
+        <g id="starGroup"></g>
+        <g transform="translate(150, 150)">
+            <circle class='shooting-star' fill='white' cx="0" cy="0" r="2" radius="125" ></circle>
+        </g>
+    </svg>
+<script src="dist/main.js"></script>
 </body>
 </html>
