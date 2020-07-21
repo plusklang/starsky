@@ -4,7 +4,7 @@ p {
 }
 
 .star {
-  fill: white;
+  fill:white;
   animation: pulse var(--star-animation-duration, 1000ms) infinite backwards,
   glowing var(--star-animation-glow-duration, 1000ms) infinite alternate backwards;
   animation-delay: var(--star-animation-delay, 0);
@@ -61,12 +61,13 @@ body {
 @keyframes glowing {
   0% {
     opacity: var(--star-brightness, 1);
-    filter: drop-shadow( 0 0 20px rgb(255, 255, 255));
+    box-shadow: 0 0 5px rgba(255,255,255,0.3);
+    filter: drop-shadow( 0 0 50px rgb(255, 255, 255));
   }
 
   100% {
     opacity: calc(var(--star-brightness, 1) * 0.85);
-    filter: drop-shadow( 0 0 0 rgb(255, 255, 255));
+    filter: drop-shadow( 0 0 20px rgb(255, 255, 255));
   }
 }
 
