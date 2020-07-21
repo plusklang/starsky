@@ -28,7 +28,7 @@ function createStar({x, y}, index, debug) {
     const parallaxIntensity = 200; // maximum translation basically.
     const delay = index * 100 + 500 * Math.random();
     const duration = 3000 + Math.random() * 4000;
-    const brightness = 0.7 + Math.random() * 0.3;
+    const brightness = 0.9 + Math.random() * 0.1;
 
     starParallax.style.setProperty('--parallax-depth', depth);
     starParallax.style.setProperty('--parallax-intensity', parallaxIntensity);

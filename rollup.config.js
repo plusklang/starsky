@@ -4,6 +4,7 @@ import { terser } from 'rollup-plugin-terser';
 import scss from 'rollup-plugin-scss';
 import serve from 'rollup-plugin-serve';
 import livereload from 'rollup-plugin-livereload';
+import multiInput from 'rollup-plugin-multi-input';
 import copy from "rollup-plugin-copy";
 
 // `npm run build` -> `production` is true
@@ -11,13 +12,15 @@ import copy from "rollup-plugin-copy";
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
-    input: 'src/js/main.js',
+    input: 'src/js/*',
     output: {
-        file: 'dist/main.js',
-        format: 'iife', // immediately-invoked function expression — suitable for <script> tags
+        format: 'esm',
+        dir: 'dist',
         sourcemap: true
     },
+
     plugins: [
+        multiInput(),
         scss({
             output:  'dist/style.css',
             watch: 'src/style/scss'
