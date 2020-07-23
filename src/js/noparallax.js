@@ -22,7 +22,7 @@ function createStar({x, y}, index, debug) {
 
     star.style.setProperty('--star-animation-delay', `${delay}ms`);
     star.style.setProperty('--star-animation-duration', `${duration}ms`);
-    star.style.setProperty('--star-animation-glow-duration', `10000ms`);
+    star.style.setProperty('--star-animation-flickering-duration', (Math.random()*200 + 50) + 'ms');
     star.style.setProperty('--star-brightness', `${brightness}`);
 
     starTranslate.appendChild(star);
