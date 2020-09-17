@@ -27,12 +27,12 @@ export default {
         }),
         resolve(), // tells Rollup how to find date-fns in node_modules
         commonjs(), // converts date-fns to ES modules
-        // copy({
-        //     targets: [
-        //         {src: 'src/assets/*', dest: 'dist/'},
-        //         {src: 'src/index.html', dest: 'dist/'}
-        //     ]
-        // }),
+        copy({
+            targets: [
+                {src: 'src/img/*', dest: 'dist/'}
+                // {src: 'src/index.html', dest: 'dist/'}
+            ]
+        }),
         production && terser(), // minify, but only in production
         !production &&
         (serve({

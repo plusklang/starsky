@@ -10,7 +10,7 @@ function createStar({x, y}, index, debug) {
     starTranslate.setAttribute('transform', `translate(${x} ${y})`);
 
     // const radius = (Math.random() + Math.random() + Math.random()) / 3 * 2 + 0.5;
-    const radius = randn_bm(0.5, 4, 2.7);
+    const radius = randn_bm(0.5, 4.5, 2.7);
     const delay = index * 100 + 500 * Math.random();
     const duration = 3000 + Math.random() * 4000;
     const brightness = 0.9 + Math.random() * 0.1;

@@ -5,6 +5,7 @@ p {
 
 .star {
   fill:white;
+  filter: drop-shadow( 0 0 50px red);
   animation: pulse var(--star-animation-duration, 1000ms) infinite backwards,
   flickering var(--star-animation-flickering-duration, 1000ms) infinite alternate backwards;
   animation-delay: var(--star-animation-delay, 0);
@@ -62,12 +63,12 @@ body {
   0% {
     opacity: var(--star-brightness, 1);
     box-shadow: 0 0 5px rgba(255,255,255,0.3);
-    filter: drop-shadow( 0 0 50px rgb(0, 255, 255));
+    filter: drop-shadow( 0 0 50px red);
   }
 
   100% {
     opacity: calc(var(--star-brightness, 1) * 0.85);
-    filter: drop-shadow( 0 0 20px rgb(255, 0, 255));
+    filter: drop-shadow( 0 0 20px red);
   }
 }
 
