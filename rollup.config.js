@@ -12,11 +12,12 @@ import copy from "rollup-plugin-copy";
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
-    input: 'src/js/*',
+    input: 'src/js/main.js',
     output: {
-        format: 'esm',
         dir: 'dist',
-        sourcemap: true
+        format: 'esm',
+        sourcemap: true,
+        name: 'main'
     },
 
     plugins: [
@@ -29,8 +30,11 @@ export default {
         commonjs(), // converts date-fns to ES modules
         copy({
             targets: [
-                {src: 'src/img/*', dest: 'dist/'}
-                // {src: 'src/index.html', dest: 'dist/'}
+                {src: 'src/img/*', dest: 'dist/'},
+                {src: 'index.html', dest: 'dist/'},
+                {src: 'dist/style.css', dest: './'},
+                {src: 'dist/js/main.js', dest: 'dist/'},
+                {src: 'dist/js/main.js.map', dest: 'dist/'}
             ]
         }),
         production && terser(), // minify, but only in production

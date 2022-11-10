@@ -1,0 +1,94 @@
+p {
+  font-size: 16px;
+  color: #ffc;
+}
+
+.star {
+  fill: white;
+  filter: drop-shadow(0 0 50px red);
+  animation: pulse var(--star-animation-duration, 1000ms) infinite backwards, flickering var(--star-animation-flickering-duration, 1000ms) infinite alternate backwards;
+  animation-delay: var(--star-animation-delay, 0);
+}
+
+.shooting-star {
+  fill: white;
+  transform-origin: 125px 0;
+  animation: 5s orbitAnimation infinite linear, 5s shootStarGlow infinite;
+}
+
+#svgCanvas {
+  height: 200vh;
+}
+
+body {
+  margin: 0;
+  background-color: #000;
+  height: 3000px;
+}
+
+#btnDebug {
+  position: fixed;
+  z-index: 1;
+  top: 10px;
+  left: 10px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  70% {
+    transform: scale3d(0.8, 0.8, 0.8);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes flickering {
+  0% {
+    opacity: var(--star-brightness, 1);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0 0 50px red);
+  }
+  100% {
+    opacity: calc(var(--star-brightness, 1) * 0.85);
+    filter: drop-shadow(0 0 20px red);
+  }
+}
+@keyframes orbitAnimation {
+  0% {
+    transform: translate(-125px, 0) rotate3d(0, 0, 1, 360deg);
+  }
+  100% {
+    transform: translate(-125px, 0) rotate3d(0, 0, 1, 270deg);
+  }
+}
+@keyframes shootStarGlow {
+  0% {
+    opacity: 0;
+  }
+  50%, 50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+#svgSkyCanvas {
+  position: fixed;
+  top: 0;
+}
+
+.planet-scape {
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+* {
+  font-weight: bold;
+}
