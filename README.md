@@ -1,4 +1,6 @@
 # starsky
-An automatically generate stars nightsky.
-Random star posititions and sizes. Reload the page to see a completely different "constellation".
+https://plusklang.github.io/starsky/
+
+An automatically generate star night sky.
+Random star positions and sizes. Reload the page to see a completely different "constellation".
 With star pulsating effect.
