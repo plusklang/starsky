@@ -1,5 +1,4 @@
-# starsky
-An autogenerate star night sky
+# starsky - An autogenerate star night sky
 
 https://thomplu.github.io/starsky/
 
